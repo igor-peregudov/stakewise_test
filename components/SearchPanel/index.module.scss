@@ -1,0 +1,97 @@
+@import './styles/variables.scss';
+
+.inputWrapper {
+  display: flex;
+  img {
+    width: 48px;
+    height: 48px;
+    margin-right: 48px;
+    margin-top: 48px;
+    @include tablet {
+      margin-right: 24px;
+      margin-top: 24px;
+    }
+  }
+}
+div.searchResult {
+  margin: 68px;
+  margin-top: 0;
+  padding-right: 96px;
+  max-width: 100%;
+  width: 100%;
+  @include desktopMedium {
+    max-width: calc(100% - 64px);
+  }
+
+  @include tablet {
+    padding-right: 0;
+    margin: auto;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  > div {
+    animation: translateToDefault .8s linear;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+    $elements: 6;
+    @for $i from 0 to $elements {
+      &:nth-child(#{($i )}n){
+          transform: translateY(#{($i ) * 30}px);
+      }
+    }
+  }
+}
+
+.clearBtn {
+  cursor: pointer;
+}
+
+.textarea {
+  font-size: 128px;
+  border: none;
+  outline: none;
+  line-height: 1;
+  letter-spacing: -6px;
+  cursor: text;
+  transition: .2s;
+  resize: none;
+  white-space: nowrap;
+  overflow-y: hidden;
+  height: auto;
+  @include tablet {
+    font-size: 80px;
+  }
+  &.fullHeight {
+    height: 305px;
+  }
+  &:empty {
+    margin-bottom: 276px;
+    height: 305px;
+    transition: .5s;
+    color: #0A0912;
+    max-width: 600px;
+    display: inline-block;
+    white-space: initial;
+    @include tablet {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 100px;
+    }
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+
+@keyframes translateToDefault {
+  40% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

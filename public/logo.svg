@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="18px" viewBox="0 0 28 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo / Medium</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Global-/-Nav" transform="translate(-78.000000, -31.000000)" fill="#1E252C" fill-rule="nonzero">
+            <g id="logo-/-Medium" transform="translate(78.666667, 31.000000)">
+                <path d="M8,0 L13.3333333,0 L13.3333333,0 L13.3333333,18 L8,18 C3.581722,18 5.41083001e-16,14.418278 0,10 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 Z M17.3333333,0 L23.2916667,0 C25.1556277,1.43395275e-15 26.6666667,1.51103897 26.6666667,3.375 C26.6666667,5.23896103 25.1556277,6.75 23.2916667,6.75 L17.3333333,6.75 L17.3333333,6.75 L17.3333333,0 Z M17.3333333,11.25 L23.2916667,11.25 C25.1556277,11.25 26.6666667,12.761039 26.6666667,14.625 C26.6666667,16.488961 25.1556277,18 23.2916667,18 L17.3333333,18 L17.3333333,18 L17.3333333,11.25 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

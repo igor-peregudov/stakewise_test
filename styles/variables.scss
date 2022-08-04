@@ -1,0 +1,10 @@
+@mixin desktopMedium {
+  @media screen and (max-width: 1439px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 991px) {
+    @content;
+  }
+}

@@ -1,0 +1,23 @@
+@import './styles/variables.scss';
+
+.userBlock {
+    max-width: 100%;
+    margin: 0 96px;
+    margin-bottom: 218px;
+    @include tablet {
+        margin: 0;
+    }
+    &.transparency {
+        opacity: .5;
+        pointer-events: none;
+    }
+    h2 {
+        letter-spacing: -1.5px;
+        font-size: 48px;
+        line-height: 1;
+        margin-bottom: 60px;
+        @include tablet {
+            text-align: center;
+        }
+    }
+}
