@@ -1,0 +1,59 @@
+@import './styles/variables.scss';
+.wrap {
+  width: 100%;
+  margin-bottom: 40px;
+  @include tablet {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 100px;
+  }
+  &:hover {
+    .textarea {
+      &:before {
+        transition: .5s;
+      }
+      &[placeholder]:empty::before {
+        opacity: .5;
+      }
+    }
+  }
+  .textarea {
+    width: 100%;
+    font-size: 128px;
+    border: none;
+    outline: none;
+    line-height: 1;
+    letter-spacing: -6px;
+    cursor: text;
+    white-space: nowrap;
+    overflow: hidden;
+    min-height: 140px;
+    &.fullHeight {
+      height: 305px;
+    }
+    span {
+      transition: 1s;
+      opacity: 0;
+      &.open {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.caret {
+  width: 2px;
+  height: 100%;
+  background-color: #000;
+
+  grid-column:2/-2;
+  transition:.2s;
+  opacity: 0;
+  grid-row:1/2
+}
+
+@keyframes setVisibility {
+  100% {
+    opacity: 1;
+  }
+}

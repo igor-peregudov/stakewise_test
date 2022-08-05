@@ -56,43 +56,6 @@ div.searchResult {
   }
 }
 
-.textarea {
-  font-size: 128px;
-  border: none;
-  outline: none;
-  line-height: 1;
-  letter-spacing: -6px;
-  cursor: text;
-  transition: .2s;
-  resize: none;
-  white-space: nowrap;
-  overflow-y: hidden;
-  height: auto;
-  @include tablet {
-    font-size: 80px;
-  }
-  &.fullHeight {
-    height: 305px;
-  }
-  &:empty {
-    margin-bottom: 276px;
-    height: 305px;
-    transition: .5s;
-    color: #0A0912;
-    max-width: 600px;
-    display: inline-block;
-    white-space: initial;
-    @include tablet {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 100px;
-    }
-    &:hover {
-      opacity: .8;
-    }
-  }
-}
-
 
 @keyframes translateToDefault {
   40% {
@@ -103,23 +66,4 @@ div.searchResult {
     opacity: 1;
   }
 }
-//
-//
-//.sc-container{
-//  display:grid;
-//  grid-template-columns:repeat(1,1fr);
-//}
-//.smoothCaretInput{
-//  grid-column:1/3;
-//  caret-color:transparent
-//}
-//.caret{
-//  grid-column:2/-2;
-//  align-self:center;
-//  transition:.2s;
-//  opacity: 0;
-//}
-//.caret,
-//.smoothCaretInput{
-//  grid-row:1/2
-//}
+
