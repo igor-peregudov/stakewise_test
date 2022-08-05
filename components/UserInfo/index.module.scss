@@ -20,13 +20,15 @@
             transform: translateX(0);
         }
     }
-    img {
+    .imageWrap {
         max-width: 168px;
         width: 100%;
         height: 168px;
+        margin-right: 56px;
+    }
+    img {
         object-fit: cover;
         border-radius: 50%;
-        margin-right: 56px;
         transform: scale(.5);
         transition: .5s;
         @include tablet {

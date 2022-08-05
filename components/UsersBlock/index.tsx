@@ -3,6 +3,7 @@ import styles from './index.module.scss';
 import Link from 'next/link';
 import cn from 'classnames';
 import { User } from '../UserInfo';
+import Image from 'next/image';
 
 type UsersBlock = {
   users: User[];
@@ -17,7 +18,9 @@ const UsersBlock = (props: UsersBlock) => {
       {users.map((user) => (
         <Link href={`/details/${user.id}`} key={user.id}>
           <div className={styles.user}>
-            <img src={user.image} alt="" />
+            <div className={styles.imageWrap}>
+              <Image src={user.image} width="168px" height="168px" />
+            </div>
             <span>{user.name}</span>
           </div>
         </Link>

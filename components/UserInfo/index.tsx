@@ -1,6 +1,7 @@
 import styles from './index.module.scss';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import cn from 'classnames';
+import Image from 'next/image';
 
 export interface User {
   name: string;
@@ -16,18 +17,7 @@ const UserInfo = (props: UserInfoProps) => {
   const { user } = props;
   const [isLoaded, setIsLoaded] = useState<Boolean>(false);
 
-  useEffect(() => {
-    getImage();
-  });
-
-  const getImage = () => {
-    let img: HTMLImageElement = new Image();
-    img.onload = function () {
-      setIsLoaded(true);
-    };
-    img.src = user.image;
-  };
-
+  const handleLoadedCompleted = () => setIsLoaded(true);
   const [name, surName] = user.name.split(' ');
 
   return (
@@ -36,7 +26,14 @@ const UserInfo = (props: UserInfoProps) => {
         [styles.isLoaded]: isLoaded,
       })}
     >
-      <img src={user.image} alt="" />
+      <div className={styles.imageWrap}>
+        <Image
+          src={user.image}
+          width="168px"
+          height="168px"
+          onLoad={handleLoadedCompleted}
+        />
+      </div>
       <div>
         <span>
           {name} <br /> {surName}
