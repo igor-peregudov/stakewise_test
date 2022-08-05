@@ -5,6 +5,9 @@ import ClearIcon from '../../public/clear.svg';
 import UsersBlock from '../UsersBlock';
 import cn from 'classnames';
 import { User } from '../UserInfo';
+import Image from 'next/image';
+import initsmoothCarets from '../../utils/smoothCaret';
+import Logo from '../../public/logo.svg';
 
 type SearchPanelProps = {
   inputValue?: string;
@@ -16,6 +19,9 @@ const SearchPanel = (props: SearchPanelProps) => {
   const { inputValue = '', setInputValue, users = [] } = props;
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
+  useEffect(() => {
+    // initsmoothCarets();
+  }, []);
   useEffect(() => {
     inputRef?.current?.focus();
   }, [inputRef]);
@@ -65,24 +71,34 @@ const SearchPanel = (props: SearchPanelProps) => {
 
   return (
     <>
-      <div className={styles.inputWrapper}>
-        <img src={SearchIcon.src} alt="" />
+      <div className={cn('sc-container', styles.inputWrapper)}>
+        <div className={styles.searchImage}>
+          <Image src={SearchIcon.src} width="40px" height="40px" />
+        </div>
         <textarea
+          data-sc=""
           ref={inputRef}
           value={inputValue}
-          className={cn(styles.textarea, {
+          className={cn('smoothCaretInput', styles.textarea, {
             [styles.fullHeight]: countOfRows > 1,
           })}
           placeholder="Crypto buddies"
           onInput={handleChangeInput}
         ></textarea>
+        <div
+          className="caret"
+          style={{ width: '2px', height: '60%', backgroundColor: '#00a6ff' }}
+        />
         {inputValue && (
-          <img
-            src={ClearIcon.src}
-            alt="clear"
-            className={styles.clearBtn}
-            onClick={handleClearTextarea}
-          />
+          <div className={styles.clearBtn}>
+            <Image
+              src={ClearIcon.src}
+              width="24px"
+              height="24px"
+              onClick={handleClearTextarea}
+              alt="clear"
+            />
+          </div>
         )}
       </div>
       {inputValue && (
