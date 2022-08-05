@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './index.module.scss';
 import Link from 'next/link';
 import cn from 'classnames';
@@ -29,4 +29,6 @@ const UsersBlock = (props: UsersBlock) => {
   );
 };
 
-export default UsersBlock;
+export default memo(UsersBlock, (prevProps, nextProps) => {
+  return prevProps.users.length === nextProps.users.length;
+});

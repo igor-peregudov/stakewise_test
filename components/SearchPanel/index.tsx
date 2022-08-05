@@ -7,7 +7,6 @@ import cn from 'classnames';
 import { User } from '../UserInfo';
 import Image from 'next/image';
 import initsmoothCarets from '../../utils/smoothCaret';
-import Logo from '../../public/logo.svg';
 
 type SearchPanelProps = {
   inputValue?: string;
