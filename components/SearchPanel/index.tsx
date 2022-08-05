@@ -75,7 +75,7 @@ const SearchPanel = (props: SearchPanelProps) => {
           <Image src={SearchIcon.src} width="40px" height="40px" />
         </div>
         <textarea
-          data-sc=""
+          data-sc="0"
           ref={inputRef}
           value={inputValue}
           className={cn('smoothCaretInput', styles.textarea, {
