@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styles from './index.module.scss';
 import SearchIcon from '../../public/search.svg';
 import ClearIcon from '../../public/clear.svg';
@@ -17,9 +17,9 @@ type SearchPanelProps = {
 const SearchPanel = (props: SearchPanelProps) => {
   const { inputValue = '', setInputValue, users = [] } = props;
 
-  const handleChangeInput = (text: string) => {
+  const handleChangeInput = useCallback((text: string) => {
     setInputValue(text);
-  };
+  }, []);
 
   const getFilteredUsers = () => {
     const [fieldName, fieldSurname] = inputValue.split(' ');

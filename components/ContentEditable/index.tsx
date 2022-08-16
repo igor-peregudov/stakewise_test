@@ -135,4 +135,4 @@ const ContentEditable = (props: ContentEditable) => {
   );
 };
 
-export default ContentEditable;
+export default React.memo(ContentEditable);
