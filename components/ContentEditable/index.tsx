@@ -10,13 +10,15 @@ type ContentEditable = {
 const ContentEditable = (props: ContentEditable) => {
   const { handleChangeInput } = props;
   const inputRef = useRef<HTMLDivElement>(null);
+  const handleChangeCaretPosRef = useRef<Function>(() => {});
 
   useEffect(() => {
     inputRef?.current?.focus();
+    handleChangeCaretPosRef.current();
   }, [inputRef]);
 
   useEffect(() => {
-    initsmoothCarets();
+    handleChangeCaretPosRef.current = initsmoothCarets();
   }, []);
 
   let text = '';
@@ -29,6 +31,7 @@ const ContentEditable = (props: ContentEditable) => {
     range.collapse(false);
     selection?.addRange(range);
     elem.focus();
+    handleChangeCaretPosRef.current();
   };
 
   const handleChange = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -46,6 +49,7 @@ const ContentEditable = (props: ContentEditable) => {
         if (/\n/.test(l) && text) {
           setTimeout(() => {
             nextField.focus();
+            handleChangeCaretPosRef.current();
           }, 0);
           return '';
         }
@@ -53,6 +57,7 @@ const ContentEditable = (props: ContentEditable) => {
         if (/\s/.test(l) && currentInnerText.trim()) {
           setTimeout(() => {
             nextField.focus();
+            handleChangeCaretPosRef.current();
           }, 0);
           return '';
         }

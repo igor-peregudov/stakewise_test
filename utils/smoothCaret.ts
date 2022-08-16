@@ -78,7 +78,7 @@ function initsmoothCarets() {
     smoothCarets[index]?.init();
   });
 
-  setInterval(() => {
+  const changeCarretPosition = () => {
     const activeElement = document.activeElement as HTMLElement;
     if (activeElement.getAttribute('data-sc')) {
       caretPosString = caretPosString = activeElement.innerText.slice(
@@ -88,7 +88,8 @@ function initsmoothCarets() {
       );
       smoothCarets[parseInt(activeElement.dataset.sc!)].update(caretPosString);
     }
-  });
+  };
+  return changeCarretPosition;
 }
 
 export default initsmoothCarets;
